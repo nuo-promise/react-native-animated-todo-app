@@ -1,6 +1,10 @@
 import React, { useEffect, memo } from 'react'
 import Animated, {
-  Easing, useSharedValue, useAnimatedProps, withTiming, interpolateColor
+  Easing,
+  useSharedValue,
+  useAnimatedProps,
+  withTiming,
+  interpolateColor
 } from 'react-native-reanimated'
 import Svg, { Path, Defs, ClipPath, G } from 'react-native-svg'
 import AnimatedStroke from './animated-stroke'
@@ -17,9 +21,9 @@ const outlineBoxPath =
 const AnimatedPath = Animated.createAnimatedComponent(Path)
 
 interface Props {
-  checked?: boolean,
-  highlightColor: string,
-  checkmarkColor: string,
+  checked?: boolean
+  highlightColor: string
+  checkmarkColor: string
   boxOutlineColor: string
 }
 
@@ -32,7 +36,6 @@ const AnimatedCheckbox = (props: Props) => {
     progress.value = withTiming(checked ? 1 : 0, {
       duration: checked ? 300 : 100,
       easing: Easing.linear
-
     })
   }, [checked])
 
@@ -49,8 +52,9 @@ const AnimatedCheckbox = (props: Props) => {
         [0, 1],
         ['#00000000', highlightColor],
         'RGB'
-      ),
-    }), [highlightColor, boxOutlineColor]
+      )
+    }),
+    [highlightColor, boxOutlineColor]
   )
 
   return (

@@ -32,4 +32,3 @@ const AnimatedStroke = ({ progress, ...pathProps }: AnimatedStrokeProps) => {
 }
 
 export default AnimatedStroke
-
