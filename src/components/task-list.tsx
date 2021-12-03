@@ -6,7 +6,6 @@ import {
 } from 'react-native-gesture-handler'
 import TaskItem from './task-item'
 import { makeStyledComponent } from '../utils/styled'
-import { onChange } from 'react-native-reanimated'
 
 const StyledView = makeStyledComponent(View)
 const StyledScrollView = makeStyledComponent(ScrollView)
@@ -121,7 +120,7 @@ export default function TaskList(props: TaskListProps) {
   const refScrollView = useRef(null)
 
   return (
-    <StyledScrollView>
+    <StyledScrollView ref={refScrollView} w="full">
       <AnimatePresence>
         {data.map(item => (
           <AnimatedTaskItem

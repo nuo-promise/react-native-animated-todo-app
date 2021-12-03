@@ -53,6 +53,7 @@ export default function MainScreen() {
   }, [])
 
   const handlePressTaskItemLabel = useCallback(item => {
+    console.log('Item Press Task Item')
     setEditingItemId(item.id)
   }, [])
 
@@ -110,6 +111,7 @@ export default function MainScreen() {
             },
             ...data
           ])
+          setEditingItemId(id)
         }}
       />
     </AnimatedColorBox>

@@ -40,53 +40,55 @@ const AboutScreen = () => {
             <Image
               source={require('../assets/nuoyan.jpg')}
               borderRadius="full"
+              borderColor="secondary.500"
+              borderWidth={3}
               resizeMode="cover"
               w={120}
               h={120}
               alt="author"
             />
           </Box>
+          <Text fontSize="md" w="full">
+            This is a React Native built by nuoyan.
+          </Text>
+          <LinkButton
+            colorScheme="red"
+            size="lg"
+            borderRadius="full"
+            href="https://www.nuo-promise.cn"
+            leftIcon={
+              <Icon as={Feather} name="youtube" size="sm" opacity={0.5} />
+            }
+          >
+            Go to Nuoyan Channel
+          </LinkButton>
+          <LinkButton
+            colorScheme={useColorModeValue('blue', 'darkBlue')}
+            size="lg"
+            borderRadius="full"
+            href="https://twitter.com/home"
+            leftIcon={
+              <Icon as={Feather} name="twitter" size="sm" opacity={0.5} />
+            }
+          >
+            @NuoyanApache
+          </LinkButton>
+          <Text fontSize="md" w="full">
+            Are you looking for a Markdown note-taking app? Check out my called
+            Inkdrop.
+          </Text>
+          <LinkButton
+            colorScheme="purple"
+            size="lg"
+            borderRadius="full"
+            href="https://www.inkdrop.app"
+            leftIcon={
+              <Icon as={Feather} name="external-link" size="sm" opacity={0.5} />
+            }
+          >
+            https://www.inkdrop.app
+          </LinkButton>
         </VStack>
-        <Text fontSize="md" w="full">
-          This is a React Native built by nuoyan.
-        </Text>
-        <LinkButton
-          colorScheme="red"
-          size="lg"
-          borderRadius="full"
-          href="https://www.nuo-promise.cn"
-          leftIcon={
-            <Icon as={Feather} name="youtube" size="sm" opacity={0.5} />
-          }
-        >
-          Go to Nuoyan Channel
-        </LinkButton>
-        <LinkButton
-          colorScheme={useColorModeValue('blue', 'darkBlue')}
-          size="lg"
-          borderRadius="full"
-          href="https://twitter.com/home"
-          leftIcon={
-            <Icon as={Feather} name="twitter" size="sm" opacity={0.5} />
-          }
-        >
-          @NuoyanApache
-        </LinkButton>
-        <Text fontSize="md" w="full">
-          Are you looking for a Markdown note-taking app? Check out my called
-          Inkdrop.
-        </Text>
-        <LinkButton
-          colorScheme="purple"
-          size="lg"
-          borderRadius="full"
-          href="https://www.inkdrop.app"
-          leftIcon={
-            <Icon as={Feather} name="external-link" size="sm" opacity={0.5} />
-          }
-        >
-          https://www.inkdrop.app
-        </LinkButton>
       </ScrollView>
     </AnimatedColorBox>
   )

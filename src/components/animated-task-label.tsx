@@ -8,7 +8,7 @@ import Animated, {
   withTiming,
   withSequence,
   withDelay,
-  interpolateColor,
+  interpolateColor
 } from 'react-native-reanimated'
 
 interface Props {
@@ -24,7 +24,8 @@ const AnimatedHStack = Animated.createAnimatedComponent(HStack)
 const AnimatedText = Animated.createAnimatedComponent(Text)
 
 const AnimatedTaskLabel = memo((props: Props) => {
-  const { strikethrough, textColor, inactiveTextColor, onPress, children } = props
+  const { strikethrough, textColor, inactiveTextColor, onPress, children } =
+    props
 
   const hstackOffset = useSharedValue(0)
   const hstackAnimatedStyles = useAnimatedStyle(
@@ -78,10 +79,21 @@ const AnimatedTaskLabel = memo((props: Props) => {
   return (
     <Pressable onPress={onPress}>
       <AnimatedHStack alignItems="center" style={[hstackAnimatedStyles]}>
-        <AnimatedText fontSize={19} noOfLines={1} isTruncated px={1} style={[textColorAnimatedStyles]}>
+        <AnimatedText
+          fontSize={19}
+          noOfLines={1}
+          isTruncated
+          px={1}
+          style={[textColorAnimatedStyles]}
+        >
           {children}
         </AnimatedText>
-        <AnimatedBox position="absolute" h={1} borderBottomWidth={1} style={[strikethrouthAnimatedStyles]} />
+        <AnimatedBox
+          position="absolute"
+          h={1}
+          borderBottomWidth={1}
+          style={[strikethrouthAnimatedStyles]}
+        />
       </AnimatedHStack>
     </Pressable>
   )
